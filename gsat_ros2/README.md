@@ -12,6 +12,9 @@ publishes:
 The package does not retrain or copy the GSAT model. `point_range`,
 `voxel_size`, and the checkpoint must come from the same training run.
 
+See [PLAN.md](PLAN.md) for the cross-machine handoff checklist, pending runtime
+validation, and Nav2 integration milestones.
+
 ## Requirements
 
 - ROS 2 with `rclpy`, `tf2_ros`, `sensor_msgs`, and `nav_msgs`
