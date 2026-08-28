@@ -1,0 +1,24 @@
+gsat_inference:
+  ros__parameters:
+    # ROS interfaces
+    input_topic: /points_raw
+    occupancy_topic: /gsat/traversability
+    score_topic: /gsat/anomaly_score
+    target_frame: base_link
+    transform_timeout_sec: 0.1
+
+    # Set both paths for your workspace/container.
+    checkpoint_path: /workspace/checkpoints/best_model.pth
+    gsat_python_path: /workspace/src/GSAT_Traversability/gsat
+
+    # These values must match the checkpoint's training configuration.
+    point_range: [-9.0, -9.0, -2.0, 9.0, 9.0, 2.0]
+    voxel_size: [0.15, 0.15, 4.0]
+    threshold_scale: 1.0
+    device: auto  # auto, cuda, or cpu
+
+    # Runtime/output behavior
+    min_points: 100
+    unknown_for_empty: true
+    publish_score_image: true
+    log_period_sec: 2.0
